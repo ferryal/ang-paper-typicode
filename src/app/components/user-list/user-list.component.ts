@@ -13,12 +13,20 @@ import { User } from '../../models/user.model';
 })
 export class UserListComponent implements OnInit {
   users: User[] = [];
+  loading: boolean = true;
 
   constructor(private userService: UserService) {}
 
   ngOnInit(): void {
-    this.userService.getUsers().subscribe((data) => {
-      this.users = data;
+    this.userService.getUsers().subscribe({
+      next: (data: User[]) => {
+        this.users = data;
+        this.loading = false;
+      },
+      error: () => {
+        this.loading = false;
+        alert('Failed to load user list.');
+      },
     });
   }
 }
