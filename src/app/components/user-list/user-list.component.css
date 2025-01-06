@@ -77,3 +77,42 @@ button {
 button:hover {
   background-color: #0056b3;
 }
+
+@media (max-width: 768px) {
+  table {
+    border: 0;
+  }
+
+  thead {
+    display: none;
+  }
+
+  tbody tr {
+    display: block;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #007bff;
+  }
+
+  td {
+    display: block;
+    text-align: right;
+    font-size: 14px;
+    padding: 10px 10px;
+    position: relative;
+  }
+
+  td::before {
+    content: attr(data-label);
+    position: absolute;
+    left: 10px;
+    width: 50%;
+    text-align: left;
+    font-weight: bold;
+    color: #007bff;
+  }
+
+  button {
+    width: 30%;
+    text-align: center;
+  }
+}

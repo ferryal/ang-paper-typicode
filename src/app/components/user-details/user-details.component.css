@@ -85,7 +85,7 @@
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 300px) {
   .details-container {
     padding: 15px;
   }

@@ -17,14 +17,14 @@
       </thead>
       <tbody>
         <tr *ngFor="let user of users">
-          <td>{{ user.name }}</td>
-          <td>{{ user.email }}</td>
-          <td>
+          <td data-label="Name">{{ user.name }}</td>
+          <td data-label="Email">{{ user.email }}</td>
+          <td data-label="Website">
             <a href="https://{{ user.website }}" target="_blank">{{
               user.website
             }}</a>
           </td>
-          <td>
+          <td data-label="Actions">
             <button [routerLink]="['/user', user.id]">view detail</button>
           </td>
         </tr>
